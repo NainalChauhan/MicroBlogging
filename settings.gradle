@@ -1,0 +1,2 @@
+rootProject.name='Blogging App'
+include ':app'
