@@ -1,8 +1,9 @@
 package com.novopay.bloggingapp.model
 
-class User (
+class Comments (
     val id: Int,
+    val postId: Int,
     val name: String,
-    val username: String,
+    val body: String,
     val email: String
 )
