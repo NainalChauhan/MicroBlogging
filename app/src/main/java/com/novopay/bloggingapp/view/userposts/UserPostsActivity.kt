@@ -56,7 +56,7 @@ class UserPostsActivity : AppCompatActivity(), ItemClickListener {
             viewModel.error.observe(this, Observer {
                 if(!TextUtils.isEmpty(it)) {
                     progressVisibility.set(View.GONE)
-                    Toast.makeText(this@UserPostsActivity, R.string.something_went_wrong, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@UserPostsActivity, it, Toast.LENGTH_LONG).show()
                 }
             })
             viewModel.loading.observe(this, Observer {

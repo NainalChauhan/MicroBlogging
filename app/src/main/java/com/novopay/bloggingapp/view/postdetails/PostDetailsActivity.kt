@@ -48,7 +48,7 @@ class PostDetailsActivity : AppCompatActivity() {
                 viewModel.error.observe(this, Observer {
                     if(!TextUtils.isEmpty(it)) {
                         progressVisibility.set(View.GONE)
-                        Toast.makeText(this@PostDetailsActivity, R.string.something_went_wrong, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@PostDetailsActivity, it, Toast.LENGTH_LONG).show()
                     }
                 })
                 viewModel.loading.observe(this, Observer {
