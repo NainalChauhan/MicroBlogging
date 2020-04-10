@@ -1,33 +1,33 @@
-package com.novopay.bloggingapp.view.userposts
+package com.novopay.bloggingapp.view.postdetails
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.novopay.bloggingapp.model.Posts
+import com.novopay.bloggingapp.model.Comments
 import com.novopay.bloggingapp.network.RetrofitService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserPostsViewModel(userId: Int) : ViewModel() {
+class PostDetailsViewModel(postId: Int) : ViewModel() {
 
-    val postsList = MutableLiveData<List<Posts>>()
+    val commentsList = MutableLiveData<List<Comments>>()
     val error = MutableLiveData<String?>()
     val loading = MutableLiveData<Boolean>()
 
     init {
-        getUserPostsList(userId)
+        getPostCommentsList(postId)
     }
 
-    private fun getUserPostsList(userId: Int){
-        RetrofitService.get().getUserPosts(userId).enqueue(object : Callback<List<Posts>> {
-            override fun onFailure(call: Call<List<Posts>>, t: Throwable) {
+    private fun getPostCommentsList(postId: Int){
+        RetrofitService.get().getPostComments(postId).enqueue(object : Callback<List<Comments>> {
+            override fun onFailure(call: Call<List<Comments>>, t: Throwable) {
                 error.value = t.message
                 loading.value = false
             }
 
-            override fun onResponse(call: Call<List<Posts>>, response: Response<List<Posts>>) {
+            override fun onResponse(call: Call<List<Comments>>, response: Response<List<Comments>>) {
                 if (response.isSuccessful) {
-                    postsList.value = response.body()
+                    commentsList.value = response.body()
                     error.value = null
                     loading.value = false
                 } else {

@@ -8,7 +8,7 @@ import com.novopay.bloggingapp.R
 import com.novopay.bloggingapp.model.User
 import com.novopay.bloggingapp.util.ItemClickListener
 
-class UsersListAdapter(val clickListener: ItemClickListener?): RecyclerView.Adapter<UsersViewHolder>() {
+class UsersListAdapter(private val clickListener: ItemClickListener?): RecyclerView.Adapter<UsersViewHolder>() {
 
     private var list: MutableList<User> = ArrayList()
 

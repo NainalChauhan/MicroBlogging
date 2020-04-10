@@ -3,13 +3,16 @@
     <string name="no_internet">No internet connection</string>
     <string name="something_went_wrong">Something went wrong. Please try after sometime!</string>
     <string name="user_details">User Details</string>
-    <string name="_name">Name: %s</string>
-    <string name="_id">Id: %d</string>
-    <string name="_email">E-mail: %s</string>
+    <string name="_name">"Name:  %s"</string>
+    <string name="_id">"Id:  %d"</string>
+    <string name="_email">"E-mail:  %s"</string>
     <string name="posts">Posts</string>
     <string name="post_details">Post Details</string>
-    <string name="post_title">Post Title: %s</string>
-    <string name="user_id">User Id: %d</string>
+    <string name="post_title">"Post Title:  %s"</string>
+    <string name="user_id">"User Id:  %d"</string>
     <string name="post_body">Post Body</string>
     <string name="comments">Comments</string>
+    <string name="comment_name">"Comment Name:  %s"</string>
+    <string name="comment_email">"Comment Email:  %s"</string>
+    <string name="comment_body">Comment Body:</string>
 </resources>

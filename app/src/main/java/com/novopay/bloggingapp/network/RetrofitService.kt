@@ -1,5 +1,6 @@
 package com.novopay.bloggingapp.network
 
+import com.novopay.bloggingapp.model.Comments
 import com.novopay.bloggingapp.model.Posts
 import com.novopay.bloggingapp.model.User
 import retrofit2.Call
@@ -20,9 +21,9 @@ interface Api {
     @GET("users")
     fun getUserList(): Call<List<User>>
 
-    @GET("users/{userId}")
-    fun getUser(@Path("userId") userId: Int): Call<User>
-
     @GET("posts")
     fun getUserPosts(@Query("userId") userId: Int): Call<List<Posts>>
+
+    @GET("posts/{postId}/comments")
+    fun getPostComments(@Path("postId") postId: Int): Call<List<Comments>>
 }
